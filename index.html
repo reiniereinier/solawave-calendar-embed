@@ -12,6 +12,10 @@
   />
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     html,
     body {
       margin: 0;
@@ -19,23 +23,48 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
+      background: #fff;
     }
 
     .calendly-wrapper {
       width: 100%;
       height: 100vh;
-      min-height: 600px;
     }
 
     #calendly-popup-embed {
       width: 100%;
       height: 100%;
     }
+
+    .calendly-inline-widget {
+      width: 100% !important;
+      height: 100% !important;
+      min-width: 100% !important;
+    }
+
+    iframe {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    @media only screen and (max-width: 767px) {
+      .calendly-wrapper {
+        height: 100vh;
+        min-height: 100vh;
+      }
+
+      body {
+        overflow: auto;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="calendly-wrapper">
-    <div id="calendly-popup-embed"></div>
+    <div
+      class="calendly-inline-widget"
+      id="calendly-popup-embed"
+    ></div>
   </div>
 
   <script

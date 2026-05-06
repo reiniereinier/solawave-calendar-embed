@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
   <title>Calendly Embed</title>
 
@@ -12,49 +15,40 @@
   />
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     html,
     body {
       margin: 0;
       padding: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden;
       background: #fff;
     }
 
     .calendly-wrapper {
       width: 100%;
       height: 100vh;
-    }
-
-    #calendly-popup-embed {
-      width: 100%;
-      height: 100%;
+      min-height: 900px;
     }
 
     .calendly-inline-widget {
-      width: 100% !important;
-      height: 100% !important;
-      min-width: 100% !important;
+      width: 100%;
+      height: 100%;
+      min-height: 900px;
     }
 
     iframe {
-      width: 100% !important;
-      height: 100% !important;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     @media only screen and (max-width: 767px) {
       .calendly-wrapper {
-        height: 100vh;
-        min-height: 100vh;
+        min-height: 700px;
       }
 
-      body {
-        overflow: auto;
+      .calendly-inline-widget {
+        min-height: 700px;
       }
     }
   </style>
@@ -63,7 +57,7 @@
   <div class="calendly-wrapper">
     <div
       class="calendly-inline-widget"
-      id="calendly-popup-embed"
+      data-url="https://calendly.com/mary-terterian-solawave/30min?hide_gdpr_banner=1"
     ></div>
   </div>
 
@@ -71,15 +65,5 @@
     src="https://assets.calendly.com/assets/external/widget.js"
     async
   ></script>
-
-  <script>
-    window.addEventListener("load", function () {
-      Calendly.initInlineWidget({
-        url: "https://calendly.com/mary-terterian-solawave/30min?hide_gdpr_banner=1",
-        parentElement: document.getElementById("calendly-popup-embed"),
-        resize: true
-      });
-    });
-  </script>
 </body>
 </html>
